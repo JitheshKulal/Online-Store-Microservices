@@ -1,0 +1,1 @@
+spring.data.mongodb.uri=mongodb+srv://username:password@cluster0.xxxxxxx.mongodb.net/product-service
