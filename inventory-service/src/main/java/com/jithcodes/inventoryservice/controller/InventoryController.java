@@ -1,5 +1,6 @@
 package com.jithcodes.inventoryservice.controller;
 
+import com.jithcodes.inventoryservice.dto.InventoryRequest;
 import com.jithcodes.inventoryservice.dto.InventoryResponse;
 import com.jithcodes.inventoryservice.service.InventoryService;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +20,12 @@ public class InventoryController {
     @ResponseStatus(HttpStatus.OK)
     public List<InventoryResponse> isInStock(@RequestParam List<String> skuCode) {
         return inventoryService.isInStock(skuCode);
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public void addToInventory(@RequestBody InventoryRequest inventoryRequest) {
+        inventoryService.addToInventory(inventoryRequest);
     }
 
 }
